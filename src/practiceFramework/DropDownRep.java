@@ -6,10 +6,11 @@ import java.awt.Dimension;
 //import java.awt.FlowLayout;
 
 
+import java.awt.FlowLayout;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -45,15 +46,14 @@ public class DropDownRep extends JFrame{
 		main.add(fieldPanel);
 		
 		JPanel listPanel = new JPanel(new BorderLayout());
-		listPanel.setMaximumSize(new Dimension (400,250));
+		listPanel.setMaximumSize(new Dimension (400,300));
 		JLabel tempList = new JLabel("Stick output list here!");
 		tempList.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		listPanel.add(tempList);
 		
 		main.add(listPanel);
 		
-		JPanel buttPanel = new JPanel();
-		buttPanel.setLayout(new BoxLayout(buttPanel, BoxLayout.X_AXIS));
+		JPanel buttPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));		
 		JButton submit = new JButton("Submit");
 		JButton clear = new JButton ("Clear");
 		JButton close = new JButton ("Close");
@@ -63,7 +63,8 @@ public class DropDownRep extends JFrame{
 		buttPanel.add(close);
 		main.add(buttPanel);
 		
-		//buttPanel.setMaximumSize(new Dimension(400, 10));
+		buttPanel.setMaximumSize(new Dimension (400, 50));
+		
 		
 		setTitle("menu checky thing");
 		setSize(400, 400);
